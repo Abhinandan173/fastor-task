@@ -26,10 +26,6 @@ const OtpScreen = (props) => {
           console.log('somthing went wrong');
         }
       })
-      .catch(error => {
-          setErrorMsg(true)
-          console.log('error', error)
-      });
     }
 
     return(

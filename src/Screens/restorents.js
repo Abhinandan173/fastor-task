@@ -26,9 +26,6 @@ const RestorentScreen = () => {
             console.log('somthing went wrong');
         }
       })
-      .catch(error => {
-          console.log('error', error)
-      });
     }
 
     const restorentClick = (item) => {
