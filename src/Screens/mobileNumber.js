@@ -53,7 +53,12 @@ const MobileNumber = (props) => {
             />
            </div>
             { errorMsg && <p style={{color:'red'}}>{'Somthing Went Wrong Try After Some Time'}</p>}
-            <button style={enableBtn?{cursor:'no-drop'}:{cursor:'pointer'}} disabled={enableBtn} onClick={getOTP} className='get-otp-btn'>Get OTP</button>
+            <button
+                style={enableBtn?{cursor:'no-drop', backgroundColor:''}:{cursor:'pointer', backgroundColor:'lightgreen'}}
+                disabled={enableBtn} onClick={getOTP} className='get-otp-btn'
+            >
+                Get OTP
+            </button>
            </div>
        </div>
    )

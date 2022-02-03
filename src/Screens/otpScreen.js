@@ -41,7 +41,12 @@ const OtpScreen = (props) => {
             />
            </div>
             { errorMsg && <p style={{color:'red'}}>{'Please check OTP..!'}</p>}
-           <button style={{cursor:'pointer'}}  onClick={OtpSuccess} className='get-otp-btn'>Submit</button>
+            <button
+              style={{cursor:'pointer', backgroundColor:'lightgreen'}}
+              onClick={OtpSuccess} className='get-otp-btn'
+            >
+              Submit
+            </button>
         </div>
         </div>
     )
