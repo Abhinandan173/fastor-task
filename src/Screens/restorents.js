@@ -37,11 +37,16 @@ const RestorentScreen = () => {
     return(
         <div className="container-restorent">
             <div className="sub-container-restorent">
+
             <div className="restorent-header" >
                 <FaBackward style={{margin:'0 5%', cursor:'pointer'}} size={27}
-                  onClick={()=>navigate('/OtpScreen')}/>
+                  onClick={()=>navigate('/OtpScreen')}
+                />
                 <h1 className="restorents-foryou">Restorents For You</h1>
             </div>
+
+            {restorentData.length > 0 ?
+            <>
             {restorentData.map((item,index)=>{
                 return(
                     <div onClick={()=>restorentClick(item)} className="restorent-card">
@@ -61,11 +66,15 @@ const RestorentScreen = () => {
                               <div className="restorent-offer">4 Offerse trending</div>
                               <div className="rating-price">
                                   <div> 
-                                      <div className="restorent-star"><FaStar style={{marginRight:5}}/>{' '}{item.rating.restaurant_avg_rating}</div>
+                                      <div className="restorent-star">
+                                          <FaStar style={{marginRight:5}}/>{' '}{item.rating.restaurant_avg_rating}
+                                      </div>
                                       <div>{item?.rating?.restaurant_avg_rating >= 4 ? 'Popularity' : 'Avarage'}</div>
                                   </div>
                                   <div className="restorent-cost">  
-                                      <div className="restorent-star"><FaRupeeSign style={{marginRight:5}}/>{' '}{item.avg_cost_for_two}</div>
+                                      <div className="restorent-star">
+                                          <FaRupeeSign style={{marginRight:5}}/>{' '}{item.avg_cost_for_two}
+                                      </div>
                                       <div>Cost for two</div>
                                  </div>
                               </div>
@@ -73,6 +82,9 @@ const RestorentScreen = () => {
                     </div>
                 )
             })}
+            </> 
+            : <h2>As Of Now all restorents are closed..!</h2> 
+            }
            </div>
         </div>
     )
