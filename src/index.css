@@ -81,7 +81,7 @@ code {
 .restorent-header{
   display: flex;
   width: 100%;
-  background-color: yellow;
+  background: linear-gradient(45deg, #ddae47 30%, #e6662a 70%);
   align-items: center;
   flex-direction: row;
   margin-bottom: 1%;
