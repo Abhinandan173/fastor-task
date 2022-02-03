@@ -9,7 +9,7 @@ const MobileNumber = (props) => {
   const navigate = useNavigate()
 
   useEffect(()=>{
-     if(value?.length == 10){
+     if(value?.length === 10){
          setEnableBtn(false) 
      }else{
         setEnableBtn(true)
