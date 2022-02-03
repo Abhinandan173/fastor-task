@@ -17,10 +17,14 @@ const OtpScreen = (props) => {
         }
       axios.post('https://staging.fastor.in/v1/pwa/user/login', body)
       .then(response => {
-          console.log('response', response.data.data.token)
+        if(response.status == 200){
+          console.log('response--', response)
           setErrorMsg(false)
-        navigate('/RestorentScreen')
-        localStorage.setItem('token', response.data.data.token);
+          navigate('/RestorentScreen')
+          localStorage.setItem('token', response.data.data.token);
+        }else{
+          console.log('somthing went wrong');
+        }
       })
       .catch(error => {
           setErrorMsg(true)

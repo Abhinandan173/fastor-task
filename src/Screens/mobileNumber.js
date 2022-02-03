@@ -23,10 +23,14 @@ const MobileNumber = (props) => {
       }
     axios.post('https://staging.fastor.in/v1/pwa/user/register', body)
     .then(response => {
-        console.log('response', response)
-        setErrorMsg(false)
-        props.passMobileNum(value)
-        navigate('/OtpScreen')
+        if(response.status == 200){
+            console.log('response', response)
+            setErrorMsg(false)
+            props.passMobileNum(value)
+            navigate('/OtpScreen')
+        }else{
+            console.log('somthing went wrong');
+        }
     })
     .catch(error => {
         setErrorMsg(true)
