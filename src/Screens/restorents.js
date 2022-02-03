@@ -19,8 +19,12 @@ const RestorentScreen = () => {
           headers:{Authorization:getToken}
       })
       .then(response => {
-          console.log('response restorent', response.data)
-          setRestorentData(response.data)
+        if(response.status == 200){
+            console.log('response restorent', response)
+            setRestorentData(response.data)
+        }else{
+            console.log('somthing went wrong');
+        }
       })
       .catch(error => {
           console.log('error', error)
