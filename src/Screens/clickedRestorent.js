@@ -9,7 +9,7 @@ const ClickedRestorent = () => {
     return(
         <div className='clickedResContainer'>
             <img 
-                src={location.state.imgSrc} 
+                src={location.data.imgSrc} 
                 style={{
                     height:'70%',
                     width:'60%',

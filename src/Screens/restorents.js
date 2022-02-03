@@ -33,7 +33,7 @@ const RestorentScreen = () => {
 
     const restorentClick = (item) => {
         console.log('item---',item);
-        navigate('/ClickedRestorent',{state:{imgSrc:item.images[0].url}})
+        navigate('/ClickedRestorent',{data:{imgSrc:item.images[0].url}})
     }
 
     
