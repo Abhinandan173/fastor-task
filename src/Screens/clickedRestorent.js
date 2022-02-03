@@ -1,9 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import { FaFacebookSquare } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
+import {ShareSocial} from 'react-share-social' 
 
 const ClickedRestorent = () => {
     
@@ -14,9 +11,10 @@ const ClickedRestorent = () => {
             <img 
                 src={location.state.imgSrc} 
                 style={{
-                    height:'80%',
-                    width:'auto',
-                    borderRadius:'3%'
+                    height:'70%',
+                    width:'60%',
+                    borderRadius:'3%',
+                    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)'
                 }}
             />
             <img 
@@ -25,23 +23,25 @@ const ClickedRestorent = () => {
                     position:'absolute',
                     height:'40%',
                     width:'20%',
+                    top:'18%',
                     borderRadius:'50%'
                 }}
             />
 
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}} className='share-btn'  >
-                <a   target="_blank" href="https://facebook.com">
-                <FaFacebookSquare size={25} color='blue'/>
-                </a>
-                <a  target="_blank" href="https://api.whatsapp.com/">
-                <FaWhatsapp size={25} color='green'/>
-                </a>
-                <a  target="_blank" href="https://www.linkedin.com/">
-                <FaLinkedin size={25} color='blue'/>
-                </a>
-                <a  target="_blank" href="https://twitter.com/">
-                <FaTwitter size={25} color='blue'/>
-                </a>
+            <div style={{display:'flex', flexDirection:'row', justifyContent:'center',}} className='share-btn'  >
+            <ShareSocial
+                    style={{
+                    width:'50%',
+                    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                    borderRadius: 3,
+                    border: 0,
+                    color: 'white',
+                    padding: '10px 30px',
+                    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+                }}
+                    url ={'fastor.com'}
+                    socialTypes={['facebook','twitter','linkedin']}
+                />
             </div>
             
         </div>

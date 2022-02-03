@@ -40,7 +40,7 @@ const OtpScreen = (props) => {
                 // onChange={(e)=>setValue(e.target.value)}
             />
            </div>
-            { errorMsg && <p style={{color:'red'}}>{'Not Able To Send Otp'}</p>}
+            { errorMsg && <p style={{color:'red'}}>{'Please check OTP..!'}</p>}
            <button style={{cursor:'pointer'}}  onClick={OtpSuccess} className='get-otp-btn'>Submit</button>
         </div>
         </div>

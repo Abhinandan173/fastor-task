@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import { FaRupeeSign } from 'react-icons/fa';
+import { FaBackward } from 'react-icons/fa';
 const RestorentScreen = () => {
 
     const [restorentData, setRestorentData] = useState([])
@@ -36,7 +37,11 @@ const RestorentScreen = () => {
     return(
         <div className="container-restorent">
             <div className="sub-container-restorent">
-            <h1 className="restorents-foryou">Restorents For You</h1>
+            <div className="restorent-header" >
+                <FaBackward style={{margin:'0 5%', cursor:'pointer'}} size={27}
+                  onClick={()=>navigate('/OtpScreen')}/>
+                <h1 className="restorents-foryou">Restorents For You</h1>
+            </div>
             {restorentData.map((item,index)=>{
                 return(
                     <div onClick={()=>restorentClick(item)} className="restorent-card">
